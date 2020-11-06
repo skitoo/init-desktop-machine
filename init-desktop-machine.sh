@@ -5,15 +5,18 @@ LABS=$WORKSPACE/labs
 PROJECTS=$WORKSPACE/projects
 DOTFILES=$WORKSPACE/dotfiles
 
-echo $DOTFILES
+
+function display_title {
+  echo -e "\e[34m* ${1}\e[39m"
+}
 
 # update and upgrade system
-echo "--- UPDATE APT PACKAGES ---"
+display_title "UPDATE APT PACKAGES"
 sudo apt update -qq && sudo apt upgrade -y -qq
 
 
 # install apps
-echo "--- INSTALL APT PACKAGES ---"
+dsplay_title "INSTALL APT PACKAGES"
 sudo apt install -qq -y\
   git\
   neovim\
@@ -37,7 +40,7 @@ sudo apt install -qq -y\
 
 
 # install python packages
-echo "--- PYTHON PACKAGES ---"
+display_title "PYTHON PACKAGES"
 python3 -m pip install --quiet poetry
 
 
@@ -46,7 +49,7 @@ mkdir -p $PROJECTS
 mkdir -p $LABS
 
 # initialize dotfiles
-echo "--- DOTFILES ---"
+display_title "DOTFILES"
 git clone git@github.com:skitoo/dotfiles.git $DOTFILES
 
 rm ~/.zshrc ~/.gitconfig ~/.tmux.conf
@@ -60,22 +63,22 @@ ln -s $DOTFILES/vim/vimrc ~/.config/nvim/init.vim
 
 
 # install tmux plugins
-echo "--- TMUX ---"
+display_title "TMUX"
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # install zsh plugins
-echo "--- ZSH ---"
+display_title "ZSH"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
 # install neovim plugins
-echo "--- NEOVIM ---"
+display_title "NEOVIM"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # clean
-echo "--- CLEAN ---"
+display_title "CLEAN"
 sudo apt autoremove -y -qq
