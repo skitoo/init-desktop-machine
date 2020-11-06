@@ -9,7 +9,7 @@ echo $DOTFILES
 
 # update and upgrade system
 echo "--- UPDATE APT PACKAGES ---"
-sudo apt upgrade -qq && sudo apt upgrade -y -qq
+sudo apt update -qq && sudo apt upgrade -y -qq
 
 
 # install apps
