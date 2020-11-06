@@ -38,6 +38,12 @@ sudo apt install -qq -y\
   yarnpkg\
 
 
+# install exa
+wget -P /tmp https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
+unzip /tmp/exa-linux-x86_64-0.9.0.zip -d ~/.local/bin/
+mv ~/.local/bin/exa-linux-x86_64 ~/.local/bin/exa
+rm /tmp/exa-linux-x86_64-0.9.0.zip
+
 
 # install python packages
 display_title "PYTHON PACKAGES"
