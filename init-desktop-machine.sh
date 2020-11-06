@@ -15,21 +15,21 @@ sudo apt update -qq && sudo apt upgrade -y -qq
 # install apps
 echo "--- INSTALL APT PACKAGES ---"
 sudo apt install -qq -y\
-	git\
-	neovim\
-	htop\
-	tmux\
-	zsh\
-	curl\
-	wget\
+  git\
+  neovim\
+  htop\
+  tmux\
+  zsh\
+  curl\
+  wget\
   tree\
-	docker.io\
-	docker-compose\
-	python3-pip\
-	python3-testresources\
-	silversearcher-ag\
-	thefuck\
-	golang\
+  docker.io\
+  docker-compose\
+  python3-pip\
+  python3-testresources\
+  silversearcher-ag\
+  thefuck\
+  golang\
   fzf\
   npm\
   yarnpkg\
