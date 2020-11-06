@@ -1,6 +1,8 @@
 #!/bin/bash
 
 WORKSPACE=$HOME/workspace
+LABS=$WORKSPACE/labs
+PROJECTS=$WORKSPACE/projects
 DOTFILES=$WORKSPACE/dotfiles
 
 echo $DOTFILES
@@ -40,7 +42,8 @@ python3 -m pip install --quiet poetry
 
 
 # initialize workspace
-mkdir -p $WORKSPACE
+mkdir -p $PROJECTS
+mkdir -p $LABS
 
 # initialize dotfiles
 echo "--- DOTFILES ---"
