@@ -11,4 +11,4 @@ $ sh -c "$(wget -O- https://raw.githubusercontent.com/skitoo/init-desktop-machin
 
 ## Author
 
-Maintened bu [Alexis Couronne](https://github.com/skitoo).
+Maintened by [Alexis Couronne](https://github.com/skitoo).
