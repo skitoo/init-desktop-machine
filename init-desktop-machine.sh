@@ -48,6 +48,8 @@ rm /tmp/exa-linux-x86_64-0.9.0.zip
 # install python packages
 display_title "PYTHON PACKAGES"
 python3 -m pip install --quiet poetry
+python3 -m pip install --quiet black
+python3 -m pip install --quiet pylint
 
 
 # initialize workspace
