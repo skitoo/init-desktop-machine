@@ -19,6 +19,7 @@ sudo apt update -qq && sudo apt upgrade -y -qq
 dsplay_title "INSTALL APT PACKAGES"
 sudo apt install -qq -y\
   git\
+  tig\
   neovim\
   htop\
   tmux\
