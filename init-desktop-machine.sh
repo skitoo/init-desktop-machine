@@ -46,6 +46,15 @@ unzip /tmp/exa-linux-x86_64-0.9.0.zip -d ~/.local/bin/
 mv ~/.local/bin/exa-linux-x86_64 ~/.local/bin/exa
 rm /tmp/exa-linux-x86_64-0.9.0.zip
 
+# install fonts
+display_title "INSTALL NERD FONTS"
+mkdir -p .local/share/fonts
+wget -P /tmp https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
+unzip /tmp/DroidSansMono.zip -d ~/.local/share/fonts
+rm DroidSansMono.zip
+
+fc-cache -f -v
+
 
 # install python packages
 display_title "PYTHON PACKAGES"
