@@ -99,6 +99,9 @@ ln -s $DOTFILES/git/gitconfig ~/.gitconfig
 ln -s $DOTFILES/tmux/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/vim/vimrc ~/.config/nvim/init.vim
 
+# change default shell by zsh
+chsh -s $(which zsh)
+
 # clean
 display_title "CLEAN"
 sudo apt autoremove -y -qq
