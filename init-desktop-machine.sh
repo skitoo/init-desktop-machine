@@ -26,6 +26,7 @@ sudo apt install -qq -y\
   zsh\
   curl\
   wget\
+  httpie\
   tree\
   docker.io\
   docker-compose\
