@@ -49,7 +49,7 @@ rm /tmp/exa-linux-x86_64-0.9.0.zip
 
 # install python packages
 display_title "PYTHON PACKAGES"
-python3 -m pip install --quiet poetry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 python3 -m pip install --quiet black
 python3 -m pip install --quiet pylint
 
