@@ -67,18 +67,6 @@ python3 -m pip install --quiet pylint
 mkdir -p $PROJECTS
 mkdir -p $LABS
 
-# initialize dotfiles
-display_title "DOTFILES"
-git clone git@github.com:skitoo/dotfiles.git $DOTFILES
-
-rm ~/.zshrc ~/.gitconfig ~/.tmux.conf
-
-mkdir -p ~/.config/nvim
-
-ln -s $DOTFILES/zsh/zshrc ~/.zshrc
-ln -s $DOTFILES/git/gitconfig ~/.gitconfig
-ln -s $DOTFILES/tmux/tmux.conf ~/.tmux.conf
-ln -s $DOTFILES/vim/vimrc ~/.config/nvim/init.vim
 
 
 # install tmux plugins
@@ -97,6 +85,19 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 display_title "NEOVIM"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# initialize dotfiles
+display_title "DOTFILES"
+git clone git@github.com:skitoo/dotfiles.git $DOTFILES
+
+rm ~/.zshrc ~/.gitconfig ~/.tmux.conf
+
+mkdir -p ~/.config/nvim
+
+ln -s $DOTFILES/zsh/zshrc ~/.zshrc
+ln -s $DOTFILES/git/gitconfig ~/.gitconfig
+ln -s $DOTFILES/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/vim/vimrc ~/.config/nvim/init.vim
 
 # clean
 display_title "CLEAN"
