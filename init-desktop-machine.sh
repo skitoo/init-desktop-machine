@@ -102,6 +102,12 @@ ln -s $DOTFILES/vim/vimrc ~/.config/nvim/init.vim
 # change default shell by zsh
 chsh -s $(which zsh)
 
+# docker
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo gpasswd -a $USER docker
+
+
 # clean
 display_title "CLEAN"
 sudo apt autoremove -y -qq
