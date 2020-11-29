@@ -58,6 +58,7 @@ fc-cache -f -v
 
 # install python packages
 display_title "PYTHON PACKAGES"
+python3 -m pip install --upgrade pip
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 python3 -m pip install --quiet black
 python3 -m pip install --quiet pylint
@@ -85,6 +86,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 display_title "NEOVIM"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+python3 -m pip install neovim --force
+sudo npm install -g neovim
 
 # initialize dotfiles
 display_title "DOTFILES"
