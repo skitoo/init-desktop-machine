@@ -38,6 +38,7 @@ sudo apt install -qq -y\
   fzf\
   npm\
   yarnpkg\
+  net-tools\
 
 
 # install exa
